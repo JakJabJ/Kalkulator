@@ -4,9 +4,13 @@
 using namespace std;
 int main()
  {
-    int liczba;
+    int liczba, sw;
     float wynik;
-
+    switch(sw){
+     case 1:{
+      coś
+     }
+    }
 
 
  }
