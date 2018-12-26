@@ -5,21 +5,46 @@ using namespace std;
 int main()
  {
     int liczba, sw;
-    float wynik;
+    float wynik=0;
+ cout<<"podaj działanie: ";
+ cin>>sw;
     switch(sw){
      case 1:{//+
-      coś
+      while(cin>>liczba){
+       wynik+=liczba;
+       }
+      break;
      }
      case 2:{//-
-      coś
+      cin>>wynik;
+      while(cin>>liczba){
+       wynik-=liczba;
+       }
+      break;
      }
      case 3:{//*
-     coś
+      cin>>wynik;
+      while(cin>>liczba){
+       wynik*=liczba;
+       }
+      break;
      }
      case 4:{//%
-     coś
+      cin>>wynik;
+      while(cin>>liczba){
+       if(liczba==0){
+        cout<<"nie można dzielić przez 0";
+        return 0;
+        }
+       wynik/=liczba;
+       }
+      break;
      }
+      deflaut: {
+       cout<<"nie wybrałeś działania";
+       break;
+      }
     }
-
-
+cout<<"wynik= "<< wynik;
+return 0;
  }
