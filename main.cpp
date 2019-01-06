@@ -9,53 +9,76 @@ using namespace std;
   
 int main()
  {
-	cout<< " liczba -> dzia\210anie -> " << endl << " + dodawanie \n - odejmowanie \n * mno\276enie \n / dzielenie \n\n by zako\344czy\206 wpisz =" << endl;
-    int liczba, sw;
+	int sw=0, wynik=0, liczba;
 	string dzialanie;
-	cin>> liczba;
-	float wynik=liczba;
-	while (true){
-		cin>> dzialanie;
-		if (dzialanie=="=") {
-			break;
-		}
-		cin>> liczba;
-		if (dzialanie=="+"){
-			sw=1;
-		}
-		if (dzialanie=="-"){
-			sw=2;
-		}
-		if (dzialanie=="*") {
-			sw=3;
-		}
-		if (dzialanie=="/") {
-			sw=4;
-		}
-		switch(sw){
-			case 1:{//+
+	cout<< "dodawanie + \ndzia\210anie =" << endl;
+	cin>> dzialanie;
+	if (dzialanie=="+"){
+		sw=1;
+	}
+	if (dzialanie=="="){
+		sw=2;
+	}
+	switch(sw){
+		case 1: {
+			cout<< "podawaj liczby do sumowania\nna koniec wpisz =" << endl;
+			while (cin>>liczba){
 				wynik+=liczba;
-				break;
 			}
-			case 2:{//-
-				wynik-=liczba;
-				break;
-			}
-			case 3:{//*
-				wynik*=liczba;
-				break;
-			}
-			case 4:{//%
-				if(liczba==0){
-				cout<<"nie mo\276na dzieli\206 przez 0";
-				cout << "wynik= " << wynik;
-				return 0;
+			cout<< "wynik= " << wynik;
+			return 0;
+		}
+		case 2: {
+			cout<< " liczba -> dzia\210anie -> " << endl << " + dodawanie \n - odejmowanie \n * mno\276enie \n / dzielenie \n\n by zako\344czy\206 wpisz =" << endl;
+			int sw;
+			string dzialanie;
+			cin>> liczba;
+			wynik=liczba;
+			float wynik=liczba;
+			while (true){
+				cin>> dzialanie;
+				if (dzialanie=="=") {
+					break;
 				}
-				wynik/=liczba;
-				break;
+				cin>> liczba;
+				if (dzialanie=="+"){
+					sw=1;
+				}
+				if (dzialanie=="-"){
+					sw=2;
+				}
+				if (dzialanie=="*") {
+					sw=3;
+				}
+				if (dzialanie=="/") {
+					sw=4;
+				}
+				switch(sw){
+					case 1:{//+
+						wynik+=liczba;
+						break;
+					}
+					case 2:{//-
+						wynik-=liczba;
+						break;
+					}
+					case 3:{//*
+						wynik*=liczba;
+						break;
+					}	
+					case 4:{//%
+						if(liczba==0){
+							cout<<"nie mo\276na dzieli\206 przez 0";
+							cout << "wynik= " << wynik;
+							return 0;
+						}
+						wynik/=liczba;
+					break;
+					}
+				}
 			}
+			cout<< "wynik= " << wynik;
+			return 0;
 		}
 	}
-	cout<<"wynik= "<< wynik;
-	return 0;
-}
+ }
