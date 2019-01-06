@@ -9,47 +9,53 @@ using namespace std;
   
 int main()
  {
+	cout<< " liczba -> dzia\210anie -> " << endl << " + dodawanie \n - odejmowanie \n * mno\276enie \n / dzielenie \n\n by zako\344czy\206 wpisz =" << endl;
     int liczba, sw;
-    float wynik=0;
- cout<< "podaj dzia\210anie: ";
- cin>>sw;
-    switch(sw){
-     case 1:{//+
-      while(cin>>liczba){
-       wynik+=liczba;
-       }
-      break;
-     }
-     case 2:{//-
-      cin>>wynik;
-      while(cin>>liczba){
-       wynik-=liczba;
-       }
-      break;
-     }
-     case 3:{//*
-      cin>>wynik;
-      while(cin>>liczba){
-       wynik*=liczba;
-       }
-      break;
-     }
-     case 4:{//%
-      cin>>wynik;
-      while(cin>>liczba){
-       if(liczba==0){
-        cout<<"nie mo\276na dzieli\206 przez 0";
-        return 0;
-        }
-       wynik/=liczba;
-       }
-      break;
-     }
-      default: {
-       cout<<"nie wybra\210e\230 dzia\210ania";
-       return 0;
-      }
-    }
-cout<<"wynik= "<< wynik;
-return 0;
- }
+	string dzialanie;
+	cin>> liczba;
+	float wynik=liczba;
+	while (true){
+		cin>> dzialanie;
+		if (dzialanie=="=") {
+			break;
+		}
+		cin>> liczba;
+		if (dzialanie=="+"){
+			sw=1;
+		}
+		if (dzialanie=="-"){
+			sw=2;
+		}
+		if (dzialanie=="*") {
+			sw=3;
+		}
+		if (dzialanie=="/") {
+			sw=4;
+		}
+		switch(sw){
+			case 1:{//+
+				wynik+=liczba;
+				break;
+			}
+			case 2:{//-
+				wynik-=liczba;
+				break;
+			}
+			case 3:{//*
+				wynik*=liczba;
+				break;
+			}
+			case 4:{//%
+				if(liczba==0){
+				cout<<"nie mo\276na dzieli\206 przez 0";
+				cout << "wynik= " << wynik;
+				return 0;
+				}
+				wynik/=liczba;
+				break;
+			}
+		}
+	}
+	cout<<"wynik= "<< wynik;
+	return 0;
+}
